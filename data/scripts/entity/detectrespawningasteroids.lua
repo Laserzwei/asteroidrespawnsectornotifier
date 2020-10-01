@@ -23,10 +23,12 @@ end
 callable(DetectrespawnAsteroids, "onSectorEntered")
 
 function DetectrespawnAsteroids.isRespawning()
+    removeShipProblem("no respawning asteroids", Entity().id)
     addShipProblem("respawning asteroids", Entity().id, "Asteroids respawn in this Sector"%_t, "data/textures/icons/diamond.png", ColorRGB(1.0, 1.0, 1.0))
 end
 
 function DetectrespawnAsteroids.isNotRespawning()
     removeShipProblem("respawning asteroids", Entity().id)
+    addShipProblem("no respawning asteroids", Entity().id, "Asteroids do not respawn in this Sector"%_t, "data/textures/icons/diamond.png", ColorRGB(1.0, 0.2, 0.2))
 end
 
